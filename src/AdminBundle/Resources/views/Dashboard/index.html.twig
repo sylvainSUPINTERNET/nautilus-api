@@ -1,0 +1,21 @@
+Dashboard admin
+
+
+<a href="{{ path('deshboard_action_add') }}">Add user</a>
+
+
+<h4>List users</h4>
+{% for user in users %}
+    <ul>
+        {% if user.roles[0] == "ROLE_SUPER_ADMIN" %}
+            <!-- admin -->
+            <li> role : <strong>Admin</strong></li>
+        {% else %}
+            <!-- user -->
+            <li> role : <strong>User</strong></li>
+        {% endif %}
+        <li> prénoms : {{ user.username }}</li>
+        <li> email : {{ user.email }}</li>
+    </ul>
+
+{% endfor %}

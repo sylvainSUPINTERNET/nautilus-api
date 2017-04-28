@@ -1,0 +1,9 @@
+services:
+    token_manager:
+        class: NautilusBundle\Services\TokenManager
+        #arguments: ["@service_container"]
+
+
+
+
+

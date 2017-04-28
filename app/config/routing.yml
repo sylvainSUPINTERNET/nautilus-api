@@ -1,0 +1,29 @@
+
+api:
+    resource: "@ApiBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+nautilus:
+    resource: "@NautilusBundle/Controller/"
+
+
+
+
+    type:     annotation
+    prefix:   /
+
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix: /   
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<<<<<<< HEAD
+<head>
+    <meta charset="UTF-8"/>
+
+
+    {% block stylesheets %}
+    {% endblock %}
+
+
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('bundles/logo/Nautilus.png') }}"/>
+</head>
+<body>
+{% block body %}
+
+{% endblock %}
+
+</body>
+
+
+{% block javascripts %}
+{% endblock %}
+
+=======
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+>>>>>>> 611887585cf93275eef172caac397e1344bd74e1
+</html>

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+    {% block stylesheets %}
+        {% stylesheets %}
+        <!-- my last css -->
+        {% endstylesheets %}
+    {% endblock %}
+
+
+{% block title %}Nautilus{% endblock %}
+
+    {% block body %}
+        Welcom !
+
+        <br>
+        <br>
+
+
+        <strong>name = "home_page"</strong>
+
+        <!-- Connecter en ROLE_ADMIN (user) -->
+        {% if is_granted('ROLE_USER') and (is_granted('ROLE_ADMIN') == false) %}
+            <h2>Message test : vous êtes User</h2>
+
+            <a href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
+            <a href="{{ path('fos_user_security_login') }}">Login</a>
+            <a href="{{ path('fos_user_profile_show') }}">My profile</a>
+            <a href="{{ path('fos_user_profile_edit') }}">Edit profile (a ajouter sur profile show template directement</a>
+
+        {% endif %}
+
+        <!-- Connecter en SUPER_ROLE_ADMIN (admin) -->
+        {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') %}
+            <h2>Message test : vous êtes Admin</h2>
+
+            <a href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
+            <a href="{{ path('fos_user_security_login') }}">Login</a>
+            <a href="{{ path('fos_user_security_login') }}">Register</a>
+            <a href="{{ path('fos_user_profile_show') }}">My profile</a>
+            <a href="{{ path('fos_user_profile_edit') }}">Edit profile (a ajouter sur profile show template directement</a>
+
+
+            <a href="{{ path('deshboard_admin') }}">Dashboard</a>
+
+
+        {% endif %}
+
+    {% endblock %}
+
+    {% block javascripts %}
+        {% javascripts %}
+        <script src="{{ asset('bundles/js/test.js') }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+
+
+
+
